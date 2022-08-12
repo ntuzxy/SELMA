@@ -1,0 +1,13 @@
+Copy this folder into your home and cd into this copied folder -> /code/Rishi/atis_linux_minion_dev_for_xy
+Run this command                                               -> ./compile.sh
+Then Run this-> executable/epf -simulate /datasets/NEUPROWLER/Traffic_Scenes_NUS_NEW/recordings/20170802/50m/0.bin -bitfile /code/Xueyong/bit_files/ATIS.bit -F_RF_fpga 5000 -F_NN_fpga -D_TD_MMT_SELMAC
+
+After -simulate tag just enter the path to video (.bin file) You can use the one mentioned above
+After -bitfile tag just enter the path to your bit file.
+
+
+----check & kill----
+jobs
+kill -9 %1
+kill -9 %2
+

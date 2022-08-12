@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+package tn;
+
+message Tracker_Min_Update {
+	required int32 id = 1;
+	required int32 x = 2;
+	required int32 y = 3;
+}
+
+message Tracker_Max_Update {
+	required int32 id = 1;
+	required int32 x = 2;
+	required int32 y = 3;
+}
+
+message Tracker_Status_Update {
+	required int32 id = 1;
+	required bool is_active = 2;
+}
+
+message Confidence_Update {
+	required uint32 id = 1;
+	required uint32 unknown = 2;
+	required uint32 human = 3;
+	required uint32 wheeled_veh = 4;
+	required uint32 tracked_veh = 5;
+	required uint32 car = 6;
+	required uint32 van = 7;
+	required uint32 bike = 8;
+	required uint32 bus = 9;
+	required uint32 truck = 10;
+}
+
+enum Message_Type {
+	TMin = 0;
+	TMax = 1;
+	TStatus = 2;
+	Conf = 3;
+}
+
+message Message {
+	required Message_Type msg_type = 1;
+	optional Tracker_Min_Update t_min = 2;
+	optional Tracker_Max_Update t_max = 3;
+	optional Tracker_Status_Update t_status = 4;
+	optional Confidence_Update conf = 5;
+}
